@@ -17,5 +17,19 @@
 	compatible = "oppo,rmx1805";
 
 	lk2nd,dtb-files = "sdm450-oppo-rmx1805";
+
+	gpio-keys {
+	    compatible = "gpio-keys";
+
+	    volume-down {
+			lk2nd,code = <KEY_VOLUMEDOWN>;
+			gpios = <&tlmm 85 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+	    };
+
+	    volume-up {
+			lk2nd,code = <KEY_VOLUMEUP>;
+			gpios = <&pmic_pon GPIO_PMIC_RESIN 0>;
+	    };
+	};
 };
 
